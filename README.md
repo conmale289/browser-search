@@ -49,8 +49,7 @@ results with Camofox (or CloakBrowser if the site is protected).
 
 - **Deep Research mode.** The skill instructs the agent to go beyond
   superficial answers: explore multiple angles, cross-verify sources,
-  cover every aspect, and never cut corners. Tokens and time are
-  irrelevant — accuracy is all that matters.
+  cover every aspect, and never cut corners.
 
 - **Fully customizable.** The SKILL.md is plain text. You can edit the
   core rules, add your own, remove what you don't need. Adapt it to
