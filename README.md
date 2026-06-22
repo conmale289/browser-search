@@ -186,12 +186,26 @@ Imperva, PerimeterX, and DDoS-Guard. It is the last resort for the ~10% of
 sites that block Camofox.
 
 **Real-world numbers:**
-Camoufox (the engine behind Camofox) achieves up to ~92% anti-bot bypass
-rate, with ~82% baseline success rate on Cloudflare Turnstile and ~90% on
-DataDome — compared to ~60% for standard Playwright stealth approaches.
+
+| Tool | Cloudflare standard | Cloudflare Turnstile | DataDome |
+|---|---|---|---|
+| **Camoufox** (Camofox engine) | up to **~92%** [¹] | **~82%** baseline [²] | **60-75%** [¹] |
+| **Playwright Stealth** | ~70-80% [¹] | ~40-55% [¹] | ~30-50% [¹] |
+
+- **CloakBrowser** applies **58 C++ source-level patches** and scores **0.9 reCAPTCHA v3** (human-level, server-verified), passing all major anti-bot tests including Cloudflare Turnstile and FingerprintJS [³]
+- **Camofox** cold start: **~1-3s** (one-time, then ~0ms per request via warm REST API) [⁴]
+- **Playwright/Chromium** cold start: **~0.5-6s** (every launch, varies by environment) [⁵]
 
 Camofox handles the fast path. CloakBrowser handles the edge cases. Together
 they cover the entire web with no gaps. The agent decides which to use.
+
+### Sources
+
+¹ "Camoufox Vs Playwright Stealth: Complete Comparison & Alternatives (2026)" — [blog.send.win](https://blog.send.win/camoufox-vs-playwright-stealth-complete-comparison-alternatives-2026/)
+² "Bypassing Cloudflare Turnstile in 2026" — [dreamscrape.app](https://dreamscrape.app/blog/curl-cffi-vs-requests-vs-httpx)
+³ CloakBrowser README — [github.com/cloakhq/cloakbrowser](https://github.com/cloakhq/cloakbrowser)
+⁴ camoufox-pi README (cold start comparison) — [github.com/MonsieurBarti/camoufox-pi](https://github.com/MonsieurBarti/camoufox-pi)
+⁵ Playwright issue #4345 (launch time variability) — [github.com/microsoft/playwright/issues/4345](https://github.com/microsoft/playwright/issues/4345)
 
 ## Installation
 
