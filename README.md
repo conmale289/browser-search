@@ -214,21 +214,26 @@ cd browser-search
 npm install
 ```
 
-Then start the Docker containers:
+Show this README to your AI agent for a complete installation
+tailored to your environment and platform.
 
-```bash
-# SearXNG (follow the official guide)
-# https://docs.searxng.org/admin/installation-docker.html
+**Services overview:**
 
-# Camofox
-docker run -d --name camofox-browser --restart unless-stopped \
-  -p 9377:9377 \
-  -e CAMOFOX_API_KEY=your-key \
-  camofox-browser:latest
-```
+| Service | How | Reference |
+|---|---|---|
+| SearXNG | Docker, `:8080` | [docs.searxng.org](https://docs.searxng.org/admin/installation-docker.html) |
+| Camofox | Docker, `:9377` | [github.com/jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) |
+| CloakBrowser | npm (included) | `scripts/cloak/cloak-fetch.mjs` |
 
-Ask your AI agent to handle the details. Each tool has its own
-integrated documentation.
+**For the AI agent — read these files:**
+
+| File | What it contains |
+|---|---|
+| `SKILL.md` | Complete skill: commands, escalation, troubleshooting |
+| `scripts/cloak/cloak-fetch.mjs` | CloakBrowser CLI usage and all options |
+| `scripts/setup-dependencies.sh` | System dependencies |
+| `scripts/check-browser-search.sh` | Post-installation verification |
+| `docker/setup.md` | Docker setup tips |
 
 ## Environment variables
 
